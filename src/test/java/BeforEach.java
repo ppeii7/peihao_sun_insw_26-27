@@ -1,0 +1,6 @@
+/**
+ * BeforEach
+ */
+public @interface BeforEach {
+
+}
