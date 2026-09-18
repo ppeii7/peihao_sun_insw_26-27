@@ -1,10 +1,9 @@
 // IMPORTAR LIBRERÍAS JUNIT
 import org.junit.jupiter.api.BeforeEach;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
+import java.util.List;
+import java.util.ArrayList;
 import com.uem.Calculator;
 
 
@@ -63,19 +62,28 @@ public class CalculatorTest {
         assertEquals(0, calculator.discount(100, 100));
     }
 
-    // @Test 
-    // public void TesttDescuentoInvalido(){
-    //     assertThrows(IllegalArgumentException, calculator.discount(100, 1000));
-    // }
+        @Test 
+    public void TestDescuento0(){
+        assertEquals(100, calculator.discount(100, 0));
+    }
+    
+    @Test
+    public void TestDescuentoException(){
+            assertThrows(IllegalArgumentException.class, () -> calculator.discount(100, 1000));
+    }
 
-    // @Test 
-    // public void TestLista(){
-    //     assertEquals();
-    // }
 
-    // @Test
-    // public void TestListaVacia(){
-    //     assertEquals();
-    // } 
+    List <Double> listaNumeros = List.of(2.0,3.0,4.0,5.0);
+    @Test 
+    public void TestLista(){
+        assertEquals(14.0, calculator.calculateTotal(listaNumeros));
+    }
+
+    List <Double> listaVacia = List.of();
+
+    @Test
+    public void TestListaVacia(){
+        assertEquals(0.0, calculator.calculateTotal(listaVacia));
+    } 
 
 }
