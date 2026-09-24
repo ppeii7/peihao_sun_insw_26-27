@@ -1,6 +1,0 @@
-/**
- * BeforEach
- */
-public @interface BeforEach {
-
-}
