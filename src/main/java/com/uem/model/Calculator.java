@@ -1,4 +1,4 @@
-package com.uem;
+package com.uem.model;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ public class Calculator {
     public final static String EMPTY = "empty";
 
     // Multiply two integers
-    public int multiply(int a, int b) {
+    public double multiply( int a, double b) {
         return a * b;
     }
 
