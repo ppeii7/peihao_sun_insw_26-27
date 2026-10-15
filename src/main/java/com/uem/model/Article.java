@@ -10,11 +10,6 @@ public class Article {
     
     public Article(){
 
-        nombre = "";
-        cant = 0;
-        precio = 0.0;
-        descuento = 0.0;
-    
     }
 
 

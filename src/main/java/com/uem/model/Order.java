@@ -5,28 +5,31 @@ import java.util.List;
 public class Order {
 
     private Calculator c1 = new Calculator();
-    private String Id;
-    private List <Article> articulos;
+    private String id;
+    private List <Article> articles;
+
+    public Order() {
+    }
 
     public Order(String Id, List<Article> listaArticulos){
-        this.Id = Id;
-        articulos =  listaArticulos;
+        this.id = Id;
+        articles =  listaArticulos;
     }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(String id) {
-        Id = id;
+    public void setId(String _id) {
+        id = _id;
     }
 
     public List<Article> getArticulos() {
-        return articulos;
+        return articles;
     }
 
     public void setArticulos(List<Article> articulos) {
-        this.articulos = articulos;
+        this.articles = articulos;
     }
 
 
@@ -34,9 +37,9 @@ public class Order {
 
         double total = 0.0;
 
-        for(int i = 0; i < articulos.size(); i++){
+        for(int i = 0; i < articles.size(); i++){
             double a;
-            a = c1.multiply(articulos.get(i).getCant(),articulos.get(i).getPrecio());
+            a = c1.multiply(articles.get(i).getCant(),articles.get(i).getPrecio());
             total+= a;
         }
         return total;
@@ -46,10 +49,10 @@ public class Order {
 
         double total = 0.0;
 
-        for(int i = 0; i < articulos.size(); i++){
+        for(int i = 0; i < articles.size(); i++){
             double a;
             
-            a = c1.discount((c1.multiply(articulos.get(i).getCant(),articulos.get(i).getPrecio())), articulos.get(i).getDescuento());
+            a = c1.discount((c1.multiply(articles.get(i).getCant(),articles.get(i).getPrecio())), articles.get(i).getDescuento());
             total+= a;
         }
 
@@ -61,8 +64,8 @@ public class Order {
 
         String texto = "LISTA DE ARTÍCULOS \n\n";
 
-        for(int i = 0; i < articulos.size(); i++){
-            texto += articulos.get(i).toString()+ "\n";
+        for(int i = 0; i < articles.size(); i++){
+            texto += articles.get(i).toString()+ "\n";
         }
 
         return texto;
