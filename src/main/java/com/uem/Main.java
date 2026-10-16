@@ -21,9 +21,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.setProperty("org.slf4j.simple.SimpleLogger.defaultLogLevel", "DEBUG");
+        log.info("Iniciando la lectura y procesamiento del archivo de pedidos...");
 
-        
+
+
         Gson gson = new Gson();
         List<Order> orders = new ArrayList<>();
         Type tipoLista = new TypeToken<List<Order>>(){}.getType();
@@ -33,20 +34,18 @@ public class Main {
         try{
             fr = new FileReader("src/main/resources/orders.json");
             orders = gson.fromJson(fr,tipoLista);
-            fr.close();
-
-        }catch(IOException e){
-                System.out.println("Error al procesar el fichero: " + e.getMessage());
-        }
-        
-    
-        for(int i = 0; i < orders.size() ;i++){
+            for(int i = 0; i < orders.size() ;i++){
             log.debug("Loaded order: {}",orders.get(i).getId());
         }
+            fr.close();
 
+            log.info("Archivo JSON cargado correctamente. Total de pedidos: {}", orders != null ? orders.size() : 0);
+        } catch (IOException e) {
+            log.error("Fallo crítico: No se pudo leer el archivo 'orders.json'", e);
+        }
+    
 
-
-
+        
     }
     
 }
