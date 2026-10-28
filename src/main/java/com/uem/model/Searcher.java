@@ -1,4 +1,4 @@
-package com.uem;
+package com.uem.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,4 +49,15 @@ public class Searcher {
         }
         return results;
     }
+
+    public Order searchOrderById(String id, List<Order> orders) {
+        for(Order order : orders){
+            if(order.getId().equals(id)){
+                return order;
+            }
+        }
+        return null;
+    }
 }
+
+

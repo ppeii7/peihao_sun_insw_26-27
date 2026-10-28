@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.uem.model.Article;
+import com.uem.control.OrderController;
 import com.uem.model.Order;
+import com.uem.view.OrderView;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,13 +25,10 @@ public class Main {
 
         log.info("Iniciando la lectura y procesamiento del archivo de pedidos...");
 
-
-
         Gson gson = new Gson();
         List<Order> orders = new ArrayList<>();
         Type tipoLista = new TypeToken<List<Order>>(){}.getType();
         FileReader fr;
-
 
         try{
             fr = new FileReader("src/main/resources/orders.json");
@@ -43,9 +42,10 @@ public class Main {
         } catch (IOException e) {
             log.error("Fallo crítico: No se pudo leer el archivo 'orders.json'", e);
         }
-    
 
-        
-    }
+        OrderView view = new OrderView();
+        OrderController  control = new OrderController(view, orders);
+
     
+    }
 }

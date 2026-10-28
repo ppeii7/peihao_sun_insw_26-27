@@ -35,5 +35,13 @@
       { "nombre": "Apple Airpods 3", "cant": 1, "precio": 99.99, "descuento": 13 },
       { "nombre": "Garmin Fenix 7X", "cant": 4, "precio": 829, "descuento": 15 }
     ]
+  },
+    {
+        "id": "O006",
+    "articles": [
+      { "nombre": "Rimmel", "cant": 3, "precio": 10, "descuento": 15 },
+      { "nombre": "Chaqueta Stradivarius", "cant": 1, "precio": 49.99, "descuento": 20 },
+      { "nombre": "Botas", "cant": 1, "precio": 60, "descuento": 13 }
+    ]
   }
 ]

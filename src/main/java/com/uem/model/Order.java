@@ -59,6 +59,18 @@ public class Order {
         return total;
     }
 
+    public double getGrossTotalRate(double rate){
+        double total = getGrossTotal();
+        total += (rate * total);
+        return total;
+    }
+
+    public double getDiscountedTotalRate(double rate){
+        double total = getDiscountedTotal();
+        total += (rate * total);
+        return total;
+    }
+
     @Override 
     public String toString(){
 

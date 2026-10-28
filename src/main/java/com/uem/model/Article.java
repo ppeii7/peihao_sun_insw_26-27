@@ -69,7 +69,6 @@ public class Article {
 
 
     public double getDiscountedAmount(){
-
         double gross = this.getGrossAmount();
         return gross - c1.discount(gross, this.descuento);
     }
@@ -77,14 +76,9 @@ public class Article {
     @Override 
     public String toString(){
 
-        return "Nombre: "+getNombre()+", Precio: "+getPrecio()+", Cantidad: "+getCant()+", Descuento: "+ getDescuento();
-
+        return getNombre()+" x "+getCant()+" @ "+getPrecio()+"$ (descuento "+ getDescuento()+"%) = "+ String.format("%.2f",getDiscountedAmount())+"$";
     }
-
-
-
-
-    }
+}
     
 
 

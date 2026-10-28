@@ -6,7 +6,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestClassOrder;
 
-import com.uem.Searcher;
+import com.uem.model.Searcher;
 
 public class SearcherTestCase{
 
