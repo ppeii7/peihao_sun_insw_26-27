@@ -71,13 +71,12 @@ public class Order {
         return total;
     }
 
-    @Override 
-    public String toString(){
+    public String toString(double euroDolarChange){
 
         String texto = "LISTA DE ARTÍCULOS \n\n";
 
         for(int i = 0; i < articles.size(); i++){
-            texto += articles.get(i).toString()+ "\n";
+            texto += articles.get(i).toString(euroDolarChange)+ "\n";
         }
 
         return texto;

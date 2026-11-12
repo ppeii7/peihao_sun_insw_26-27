@@ -73,10 +73,9 @@ public class Article {
         return gross - c1.discount(gross, this.descuento);
     }
 
-    @Override 
-    public String toString(){
+    public String toString(double euroDolarChange){
 
-        return getNombre()+" x "+getCant()+" @ "+getPrecio()+"$ (descuento "+ getDescuento()+"%) = "+ String.format("%.2f",getDiscountedAmount())+"$";
+        return getNombre()+" x "+getCant()+" @ "+getPrecio()*euroDolarChange+" (descuento "+ getDescuento()+"%) = "+ String.format("%.2f",getDiscountedAmount()*euroDolarChange)+"";
     }
 }
     
